@@ -9,7 +9,7 @@ function ColorSchemesExample() {
       <Navbar bg="dark" variant="dark">
         <Container>         
           <Nav.Link href="#inicio"><img src="./favicon.ico" alt="Logo" />
-          <Navbar.Brand href="#home">Skin-Cheap</Navbar.Brand></Nav.Link>
+          <Navbar.Brand id='logo' href="#home">Skin-Cheap</Navbar.Brand></Nav.Link>
           <Nav className="me-auto">
             <Nav.Link href="#inicio">Inicio</Nav.Link>
             <Nav.Link href="#skins">Comprar skins</Nav.Link>
