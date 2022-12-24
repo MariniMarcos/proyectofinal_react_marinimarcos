@@ -54,6 +54,7 @@ main{
 }
 #logo{
   margin-left: 1rem;
+  font-size: 40px;
 }
 .btn-primary{
   color: rgb(0, 0, 0);
@@ -73,4 +74,21 @@ main{
 .nav-link:hover{
   color: #61dafb;
 
+}
+.Nav-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.greeting{
+  font-size: 50px;
+  color: #61dafb;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.nav-link{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }

@@ -3,23 +3,45 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
 
-function ColorSchemesExample() {
-  return (
-    <>
+function ColorSchemesExample(props) {
+  
+  if(props.isHeader){
+    return (
+      <>
+        <Navbar bg="dark" variant="dark">
+          <Container>         
+            <Nav.Link href="#inicio"><img src="./logo.png" alt="Logo" />
+            <Navbar.Brand id='logo' href="#home">SkinPro</Navbar.Brand></Nav.Link>
+            <Nav className="me-auto">
+              <Nav.Link href="#inicio">Inicio</Nav.Link>
+              <Nav.Link href="#skins">Comprar skins</Nav.Link>
+              <Nav.Link href="#faq">Preguntas Frecuentes</Nav.Link>
+              <CartWidget/>
+            </Nav>
+          </Container>
+        </Navbar>
+      </>
+    );
+  }else{
+    return(
+      <>
       <Navbar bg="dark" variant="dark">
         <Container>         
-          <Nav.Link href="#inicio"><img src="./favicon.ico" alt="Logo" />
-          <Navbar.Brand id='logo' href="#home">Skin-Cheap</Navbar.Brand></Nav.Link>
+          <Nav.Link href="#inicio"><img src="./logo.png" alt="Logo" />
+          <Navbar.Brand id='logo' href="#home">SkinPro</Navbar.Brand></Nav.Link>
           <Nav className="me-auto">
-            <Nav.Link href="#inicio">Inicio</Nav.Link>
-            <Nav.Link href="#skins">Comprar skins</Nav.Link>
-            <Nav.Link href="#faq">Preguntas Frecuentes</Nav.Link>
+            <Nav.Link href={props.hrefLinkFacebook}>{props.textLinkFacebook}</Nav.Link>
+            <Nav.Link href={props.hrefLinkInstagram}>{props.textLinkInstagram}</Nav.Link>
+            <Nav.Link href={props.hrefLinkSteam}>{props.textLinkSteam}</Nav.Link>
             <CartWidget/>
           </Nav>
         </Container>
       </Navbar>
     </>
-  );
+    )
+  }
+
+
 }
 
 export default ColorSchemesExample;

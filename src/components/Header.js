@@ -1,12 +1,17 @@
 import ColorSchemesExample from "./NavBar";
 
+
 function Header() {
+    
+    const isHeader = true
+
     return (
         <>
         <header>
-        <ColorSchemesExample/>
+        <ColorSchemesExample 
+        isHeader={isHeader} 
+        />
         </header>
-        
         </>
     );
   }

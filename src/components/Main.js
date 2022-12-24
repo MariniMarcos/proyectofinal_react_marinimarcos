@@ -16,8 +16,12 @@ function Main() {
         <h3>SKINS DISPONIBLES</h3>
         </div>
         <section className="productos">
-        <Product/><Product/><Product/>
-        <Product/><Product/><Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
         </section>
         </main>
         </>
