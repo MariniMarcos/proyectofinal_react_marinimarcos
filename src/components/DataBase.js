@@ -77,7 +77,7 @@ const DataBase = () => {
             imagen:"./productos/FiveSevenHiperBestia.png",
             producto: 'Ak47 - Five Seven HiperBestia',
             float: 'Factory New',
-            precio: "$"+16000,
+            precio: "$"+16500,
             stock: "no"
         },
         {
