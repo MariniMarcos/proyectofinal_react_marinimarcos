@@ -16,12 +16,29 @@ function Main() {
         <h3>SKINS DISPONIBLES</h3>
         </div>
         <section className="productos">
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
+        <Product imagen="" titulo="" float="" stock="" precio=""/>
         </section>
         </main>
         </>
