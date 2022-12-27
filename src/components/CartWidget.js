@@ -3,7 +3,8 @@ import React from 'react'
 const CartWidget = () => {
   return (
     <>
-      <a> 1
+      <a>
+      <span className='numeroCarrito'>1</span>
       <span className='material-icons'>shopping_cart</span>  
       </a>
     </>

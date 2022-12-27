@@ -16,7 +16,7 @@ function ColorSchemesExample(props) {
               <Nav.Link href="#nosotros">INICIO</Nav.Link>
               <Nav.Link href="#skins">COMPRAR SKINS</Nav.Link>
               <Nav.Link href="#PreguntasFrecuentes">PREGUNTAS FRECUENTES</Nav.Link>
-              <Nav.Link href="#faq">CONTACTO</Nav.Link>
+              <Nav.Link href="#contacto">CONTACTO</Nav.Link>
               <CartWidget/>
             </Nav>
           </Container>

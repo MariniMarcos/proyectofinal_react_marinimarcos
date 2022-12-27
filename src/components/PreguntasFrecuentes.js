@@ -7,7 +7,7 @@ const PreguntasFrecuentes = () => {
     <section className='PreguntasFrecuentes' id='PreguntasFrecuentes'>
     <h2 className='PreguntasFrecuentesTitulo'>PREGUNTAS FRECUENTES</h2>
     <div className='accordion'>
-    <Accordion  defaultActiveKey="0">
+    <Accordion>
       <Accordion.Item className='AccordionItem' eventKey="0">
         <Accordion.Header className='AccordionHeader'>¿Cuales son los metodos de pago?</Accordion.Header>
         <Accordion.Body>
