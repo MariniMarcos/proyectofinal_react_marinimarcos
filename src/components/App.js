@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemListContainer from "./ItemListContainer";
+import Contacto from './Contacto';
+import PreguntasFrecuentes from './PreguntasFrecuentes';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
      <Header/>
      <Main/>
      <ItemListContainer greeting="Hola soy un greeting" /> 
+     <PreguntasFrecuentes/>
+     <Contacto/>
      <Footer/> 
     </div>
   );

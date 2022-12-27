@@ -8,14 +8,15 @@ function ColorSchemesExample(props) {
   if(props.isHeader){
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar fixed="top" bg="dark" variant="dark">
           <Container>         
             <Nav.Link href="#inicio"><img src="./logo.png" alt="Logo" />
             <Navbar.Brand id='logo' href="#home">SkinPro</Navbar.Brand></Nav.Link>
             <Nav className="me-auto">
-              <Nav.Link href="#inicio">Inicio</Nav.Link>
-              <Nav.Link href="#skins">Comprar skins</Nav.Link>
-              <Nav.Link href="#faq">Preguntas Frecuentes</Nav.Link>
+              <Nav.Link href="#nosotros">INICIO</Nav.Link>
+              <Nav.Link href="#skins">COMPRAR SKINS</Nav.Link>
+              <Nav.Link href="#PreguntasFrecuentes">PREGUNTAS FRECUENTES</Nav.Link>
+              <Nav.Link href="#faq">CONTACTO</Nav.Link>
               <CartWidget/>
             </Nav>
           </Container>
