@@ -1,171 +1,221 @@
-import React from 'react'
 
-const DataBase = () => {
-  return (
-     [
+
+
+
+
+
+const Database = 
+    [
         {
-            imagen:"./productos/Ak47Asimov.png",
-            producto: 'Ak47 - Aasimoov',
+            imagen:"../productos/UspKillConfirmed.png",
             float: 'Minimal Wear',
+            producto: 'Usp KillConfirmed',
+            stock: "si",
+            stattrack:"no",
             precio: "$"+13000,
-            stock: "si"
+            categoria:"pistola",
         },
         {
-            imagen:"./productos/Ak47BloodSport.png",
-            producto: 'Ak47 - BloodSport',
+            imagen:"../productos/Ak47BloodSport.png",
             float: 'Factory New',
+            producto: 'Ak-47 BloodSport',
+            stattrack:"no",
+            stock: "si",
             precio: "$"+20000,
-            stock: "si"
+            categoria:"rifle",
         },
         {
-            imagen:"./productos/AwpAtheris",
-            producto: 'Awp - Atheris',
-            float: 'Factory New',
+            imagen:"../productos/AwpAtheris.png",
+            float: 'Minimal Wear',
+            producto: 'Awp Atheris',
+            stattrack:"no",
+            stock: "si",
             precio: "$"+5000,
-            stock: "si"
+            categoria:"sniper",
         },
         {
-            imagen:"./productos/AwpDragonFire",
-            producto: 'Awp - DragonFire',
+            imagen:"../productos/AwpDragonFire.png",
             float: 'Battle Scarred',
+            producto: 'Awp WildFire',
+            stattrack:"no",
+            stock: "si",
             precio: "$"+3500,
-            stock: "no"
+            categoria:"sniper",
         },
         {
-            imagen:"./productos/AwpDragonLore",
-            producto: 'Awp - DragonLore',
-            float: 'Minimal Wear',
-            precio: "$"+300000,
-            stock: "no"
-        },
-        {
-            imagen:"./productos/AwpFade",
+            imagen:"../productos/AwpFade.png",
+            float: 'Factory New',
             producto: 'Awp Fade',
-            float: 'Minimal Wear',
+            stattrack:"no",
+            stock: "no",
             precio: "$"+150000,
-            stock: "si"
+            categoria:"sniper",
         },
         {
-            imagen:"./productos/BowieLore",
-            producto: 'Cuchillo Bowie - Lore',
+            imagen:"../productos/AwpGugnir.png",
             float: 'Minimal Wear',
+            producto: 'Awp Gugnir',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+700000,
+            categoria:"sniper",
+        },
+        {
+            imagen:"../productos/BowieLore.png",
+            float: 'Factory Newr',
+            producto: 'Bowie Lore',
+            stattrack:"no",
+            stock: "no",
             precio: "$"+40000,
-            stock: "no"
+            categoria:"cuchillo",
         },
         {
-            imagen:"./productos/CrimsonKimonoGloves",
-            producto: 'Crimson Kimono Gloves',
-            float: 'Battle Scarred',
-            precio: "$"+70000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/Estileto",
-            producto: 'Cuchillo estileto',
-            float: 'Minimal Wear',
-            precio: "$"+45000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/FiveSevenBanana.png",
-            producto: 'Five Seven Banana',
-            float: 'Factory New',
-            precio: "$"+3000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/FiveSevenHiperBestia.png",
-            producto: 'Ak47 - Five Seven HiperBestia',
-            float: 'Factory New',
-            precio: "$"+16500,
-            stock: "no"
-        },
-        {
-            imagen:"./productos/GlockBulletQueen",
-            producto: 'Glock Bullet Queen',
-            float: 'Minimal Wear',
-            precio: "$"+3500,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/GlockFade",
-            producto: 'Glock Fade',
-            float: 'Battle Scarred',
-            precio: "$"+130000,
-            stock: "no"
-        },
-        {
-            imagen:"./productos/GlockVogue",
-            producto: 'Glock Vogue',
-            float: 'Minimal Wear',
-            precio: "$"+8700,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/KarambitEsmerald.png",
-            producto: 'Karambit Esmerald',
+            imagen:"../productos/MotoGlovesPolygon.png",
             float: 'Well Worn',
-            precio: "$"+800000,
-            stock: "no"
-        },
-        {
-            imagen:"./productos/M4A1BlueFosfore.png",
-            producto: 'M4-A1 BlueFosfore.',
-            float: 'Minimal Wear',
-            precio: "$"+170000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/M4A1Hiperbestia.png",
-            producto: 'M4-A1 Hiperbestia',
-            float: 'Factory New',
-            precio: "$"+37000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/M4A4Emperador.png",
-            producto: 'M4-A4 Emperador',
-            float: 'Minimal Wear',
-            precio: "$"+13000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/M4A4LivingColor.png",
-            producto: 'M4-A4 LivingColor',
-            float: 'Minimal Wear',
-            precio: "$"+12000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/M9Bayoneta.png",
-            producto: 'M9 Bayoneta',
-            float: 'Minimal Wear',
-            precio: "$"+280000,
-            stock: "si"
-        },
-        {
-            imagen:"./productos/MotoGlovesPolygon.png",
             producto: 'MotoGloves Polygon',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+47000,
+            categoria:"guantes",
+        },
+        {
+            imagen:"../productos/CrimsonKimonoGloves.png",
             float: 'Well Worn',
-            precio: "$"+40000,
-            stock: "no"
+            producto: 'Crimson Kimono',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+70000,
+            categoria:"guantes",
         },
         {
-            imagen:"./productos/MotoGlovesTurtle.png",
-            producto: 'MotoGloves Turtle',
+            imagen:"../productos/Estileto.png",
             float: 'Minimal Wear',
-            precio: "$"+50000,
-            stock: "si"
+            producto: 'Estileto Tiger Thoot',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+45000,
+            categoria:"cuchillo",
         },
         {
-            imagen:"./productos/UspMonster.png",
-            producto: 'Usp Monster',
-            float: 'Minimal Wear',
+            imagen:"../productos/UspMonster.png",
+            float: 'Factory New',
+            producto: 'Usp MonsterMashup',
+            stattrack:"no",
+            stock: "si",
             precio: "$"+8000,
-            stock: "si"
+            categoria:"pistola",
+        },
+        {
+            imagen:"../productos/UmpBlaze.png",
+            float: 'Factory New',
+            producto: 'Ump Blaze',
+            stattrack:"si",
+            stock: "no",
+            precio: "$"+9000,
+            categoria:"subfusil",
+        },
+        {
+            imagen:"../productos/GlockBulletQueen.png",
+            float: 'Well Worn',
+            producto: 'Glock BulletQueen',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+3500,
+            categoria:"pistola",
+        },
+        {
+            imagen:"../productos/M4A1PrintStream.png",
+            float: 'Minimal Wear',
+            producto: 'M4-A1 PrintStream',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+45000,
+            categoria:"rifle",
+        },
+        {
+            imagen:"../productos/GlockVogue.png",
+            float: 'Well Worn',
+            producto: 'Glock Vogue',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+8700,
+            categoria:"pistola",
+        },
+        {
+            imagen:"../productos/GutKnife.png",
+            float: 'Factory New',
+            producto: 'Gut Knife',
+            stattrack:"si",
+            stock: "no",
+            precio: "$"+110000,
+            categoria:"cuchillo",
+        },
+        {
+            imagen:"../productos/Mariposa.png",
+            float: 'Minimal Wear',
+            producto: 'Mariposa Fade',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+570000,
+            categoria:"cuchillo",
+        },
+        {
+            imagen:"../productos/MotoGlovesTurtle.png",
+            float: 'Batlle Scarred',
+            producto: 'MotoGloves Turtle',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+50000,
+            categoria:"guantes",
+        },
+        {
+            imagen:"../productos/M4A1BlueFosfore.png",
+            float: 'Minimal Wear',
+            producto: 'M4-A1 Blue Fosfore',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+170000,
+            categoria:"rifle",
+        },
+        {
+            imagen:"../productos/Navaja.png",
+            float: 'Factory New',
+            producto: 'Navaja Tiger Thoot',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+90000,
+            categoria:"cuchillo",
+        },
+        {
+            imagen:"../productos/M4A4Emperador.png",
+            float: 'Battle Scarred',
+            producto: 'M4-A4 Emperador',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+13000,
+            categoria:"rifle",
+        },
+        {
+            imagen:"../productos/M4A4LivingColor.png",
+            float: 'Factory New',
+            producto: 'M4-A4 Living Color',
+            stattrack:"no",
+            stock: "si",
+            precio: "$"+6000,
+            categoria:"rifle",
+        },
+        {
+            imagen:"../productos/PandoraGloves.png",
+            float: 'Minimal Wear',
+            producto: 'Pandora Gloves',
+            stattrack:"no",
+            stock: "no",
+            precio: "$"+300000,
+            categoria:"guantes",
         },
     ]
-  )
-}
 
-export default DataBase
+export default Database
+
+
+

@@ -1,4 +1,11 @@
+import { useEffect } from "react";
 import Product from "./Card";
+import Database from "./DataBase";
+import {filtroPistola,filtroRifle, filtroSniper, filtroCuchillo, filtroGuantes, filtroSubfusil,filtroEscopetas,filtroPersonajes} from "./Functions" 
+import Galeria from "./Galeria";
+import Filtro  from "./Functions";
+
+
 
 function Main() {
     return (
@@ -17,37 +24,29 @@ function Main() {
             </div>  
         </section>
         
-        <section  className="productos" id="skins">
-        <h2>SKINS DISPONIBLES</h2>
+        <section className="productos" id="skins">
+        <div className="productos-header">
+            <h2>SKINS DISPONIBLES</h2>
+            <select name="select" id="select" className="filtro">
+                <option value="todos">Todos</option>
+                <option value="Cuchillos">Cuchillos</option>
+                <option value="Guantes">Guantes</option>
+                <option value="Rifles">Rifles</option>
+                <option value="Sniper">Sniper</option>
+                <option value="Subfusiles">Subfusiles</option>
+                <option value="Escopetas">Escopetas</option>
+                <option value="Personajes">Personajes</option>
+            </select>
+        </div>
         <div className="cards">
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
-            <Product imagen="" titulo="" float="" stock="" precio=""/>
+            <Galeria/>
         </div>
         </section>
         </main>
         </>
     );
   }
-  
   export default Main;
+
+
+  

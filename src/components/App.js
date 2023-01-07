@@ -11,7 +11,7 @@ function App() {
     <div>
      <Header/>
      <Main/>
-     <ItemListContainer greeting="Hola soy un greeting" /> 
+     <ItemListContainer/> 
      <PreguntasFrecuentes/>
      <Contacto/>
      <Footer/> 
