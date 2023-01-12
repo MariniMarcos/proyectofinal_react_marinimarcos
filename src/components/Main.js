@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-import Product from "./Card";
-import Database from "./DataBase";
-import {filtroPistola,filtroRifle, filtroSniper, filtroCuchillo, filtroGuantes, filtroSubfusil,filtroEscopetas,filtroPersonajes} from "./Functions" 
+import React from 'react'
 import Galeria from "./Galeria";
-import Filtro  from "./Functions";
+import Filtro from "./Filtro";
+
 
 
 
@@ -27,16 +25,7 @@ function Main() {
         <section className="productos" id="skins">
         <div className="productos-header">
             <h2>SKINS DISPONIBLES</h2>
-            <select name="select" id="select" className="filtro">
-                <option value="todos">Todos</option>
-                <option value="Cuchillos">Cuchillos</option>
-                <option value="Guantes">Guantes</option>
-                <option value="Rifles">Rifles</option>
-                <option value="Sniper">Sniper</option>
-                <option value="Subfusiles">Subfusiles</option>
-                <option value="Escopetas">Escopetas</option>
-                <option value="Personajes">Personajes</option>
-            </select>
+            <Filtro/>
         </div>
         <div className="cards">
             <Galeria/>

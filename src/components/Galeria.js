@@ -1,6 +1,5 @@
 import React from 'react'
 import Product from './Card'
-import Database from './DataBase';
 import filteredDatabase from './Functions';
 
 const Galeria = () => {
