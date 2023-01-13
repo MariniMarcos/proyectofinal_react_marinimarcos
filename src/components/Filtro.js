@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from "react";
 import Database from './DataBase';
-import Galeria from './Galeria';
+import Galeria from './ItemListContainer';
 
 
 function handleCategoryChange(event, setFilteredDatabase) {

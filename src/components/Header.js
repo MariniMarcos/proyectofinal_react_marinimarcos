@@ -1,4 +1,4 @@
-import ColorSchemesExample from "./NavBar";
+import NavBar from "./NavBar";
 
 
 function Header() {
@@ -7,11 +7,9 @@ function Header() {
 
     return (
         <>
-        <header>
-        <ColorSchemesExample 
-        isHeader={isHeader} 
-        />
-        </header>
+            <header>
+            <NavBar  isHeader={isHeader}/>
+            </header>
         </>
     );
   }

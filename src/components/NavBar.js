@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
 
-function ColorSchemesExample(props) {
+function NavBar(props) {
   
   if(props.isHeader){
     return (
@@ -45,4 +45,4 @@ function ColorSchemesExample(props) {
 
 }
 
-export default ColorSchemesExample;
+export default NavBar;

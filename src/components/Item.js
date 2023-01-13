@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function Product(props) {
+function Item(props) {
     
   return (
     <Card className='card'>
@@ -22,4 +22,4 @@ function Product(props) {
   );
 }
 
-export default Product;
+export default Item;

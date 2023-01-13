@@ -2,20 +2,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import ItemListContainer from "./ItemListContainer";
 import Contacto from './Contacto';
 import PreguntasFrecuentes from './PreguntasFrecuentes';
+import { BrowserRouter } from 'react-router-dom';
+import Nosotros from './Nosotros';
 
 function App() {
   return (
-    <div>
-     <Header/>
-     <Main/>
-     <ItemListContainer/> 
-     <PreguntasFrecuentes/>
-     <Contacto/>
-     <Footer/> 
-    </div>
+    <BrowserRouter>
+        <Header/>
+        <Nosotros/>
+        <Main/>
+        <PreguntasFrecuentes/>
+        <Contacto/>
+        <Footer/> 
+    </BrowserRouter>
   );
 }
 
