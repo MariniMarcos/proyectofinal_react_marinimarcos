@@ -1,7 +1,6 @@
 import React from 'react'
 import Item from './Item'
 import filteredDatabase from './Functions';
-import Filtro from './Filtro';
 
 
 const ItemList = () => {
@@ -13,15 +12,9 @@ const ItemList = () => {
     });
 
     return (
-        <section className="productos" id="skins">
-            <div className="productos-header">
-            <h2>SKINS DISPONIBLES</h2>
-            <Filtro/>
-            </div>
             <div className="cards">
             {ProducDiv}
             </div>
-        </section> 
   )
 }
 

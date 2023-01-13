@@ -1,31 +1,40 @@
 import React, { useState } from 'react';
 import { useEffect } from "react";
 import Database from './DataBase';
-import Galeria from './ItemListContainer';
+import filteredDatabase from './Functions';
 
-
-function handleCategoryChange(event, setFilteredDatabase) {
-  const selectedCategory = event.target.value;
-  let filteredDatabase;
-  if (selectedCategory === "todos") {
-    filteredDatabase = Database;
-  } else {
-    filteredDatabase = Database.filter(item => item.categoria === selectedCategory);
-  }
-  setFilteredDatabase(filteredDatabase);
-}
 
 const Filtro = () => {
-  const [filteredDatabase, setFilteredDatabase] = useState(Database);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const select = document.querySelector("#select");
-    select.addEventListener("change", event => handleCategoryChange(event, setFilteredDatabase));
+    const getProducts = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Database);
+      }, 1000);
+    });
+    getProducts.then((result) => {
+      setProducts(result);
+      setLoading(false);
+    });
   }, []);
+
+
+  const handleFilter = (e) => {
+    const value = e.target.value;
+    if (value === 'todos') {
+      filteredDatabase(Database);
+    } else {
+      const filtered = Database.filter((product) => product.categoria === value);
+      filteredDatabase(filtered);
+    }
+
+  };
 
   return (
     <>
-      <select name="select" id="select" className="filtro">
+      <select onChange={handleFilter} name="select" id="select" className="filtro">
         <option value="todos">Todos</option>
         <option value="Cuchillos">Cuchillos</option>
         <option value="Guantes">Guantes</option>

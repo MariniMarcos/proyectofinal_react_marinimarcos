@@ -3,6 +3,7 @@ import Item from './Item'
 import filteredDatabase from './Functions';
 import Filtro from './Filtro';
 import { useEffect, useState } from "react"
+import ItemList from './ItemList';
 
 
 const ItemListContainer = () => {
@@ -30,7 +31,7 @@ const ItemListContainer = () => {
             <Filtro/>
             </div>
             <div className="cards">
-            {loading ? <h1>Cargando...</h1> : products.map((product) => <Item imagen={product.imagen} titulo={product.producto} float={product.float} stock={product.stock} stattrack={product.stattrack} precio={product.precio}/>)}
+            {loading ? <h1>Cargando...</h1> : products.map((product) => <ItemList/>,)}
             </div>
         </section>
     </>
