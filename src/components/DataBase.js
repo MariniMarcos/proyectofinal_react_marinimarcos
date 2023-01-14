@@ -1,9 +1,4 @@
 
-
-
-
-
-
 const Database = 
     [
         {
@@ -14,6 +9,7 @@ const Database =
             stattrack:"no",
             precio: "$"+13000,
             categoria:"pistola",
+            id:1,
         },
         {
             imagen:"../productos/Ak47BloodSport.png",
@@ -23,6 +19,7 @@ const Database =
             stock: "si",
             precio: "$"+20000,
             categoria:"rifle",
+            id:2,
         },
         {
             imagen:"../productos/AwpAtheris.png",
@@ -32,6 +29,7 @@ const Database =
             stock: "si",
             precio: "$"+5000,
             categoria:"sniper",
+            id:3,
         },
         {
             imagen:"../productos/AwpDragonFire.png",
@@ -41,6 +39,7 @@ const Database =
             stock: "si",
             precio: "$"+3500,
             categoria:"sniper",
+            id:4,
         },
         {
             imagen:"../productos/AwpFade.png",
@@ -50,6 +49,7 @@ const Database =
             stock: "no",
             precio: "$"+150000,
             categoria:"sniper",
+            id:5,
         },
         {
             imagen:"../productos/AwpGugnir.png",
@@ -59,6 +59,7 @@ const Database =
             stock: "no",
             precio: "$"+700000,
             categoria:"sniper",
+            id:6,
         },
         {
             imagen:"../productos/BowieLore.png",
@@ -68,6 +69,7 @@ const Database =
             stock: "no",
             precio: "$"+40000,
             categoria:"cuchillo",
+            id:7,
         },
         {
             imagen:"../productos/MotoGlovesPolygon.png",
@@ -77,6 +79,7 @@ const Database =
             stock: "si",
             precio: "$"+47000,
             categoria:"guantes",
+            id:8,
         },
         {
             imagen:"../productos/CrimsonKimonoGloves.png",
@@ -86,6 +89,7 @@ const Database =
             stock: "no",
             precio: "$"+70000,
             categoria:"guantes",
+            id:9,
         },
         {
             imagen:"../productos/Estileto.png",
@@ -95,6 +99,7 @@ const Database =
             stock: "si",
             precio: "$"+45000,
             categoria:"cuchillo",
+            id:10,
         },
         {
             imagen:"../productos/UspMonster.png",
@@ -104,6 +109,7 @@ const Database =
             stock: "si",
             precio: "$"+8000,
             categoria:"pistola",
+            id:11,
         },
         {
             imagen:"../productos/UmpBlaze.png",
@@ -113,6 +119,7 @@ const Database =
             stock: "no",
             precio: "$"+9000,
             categoria:"subfusil",
+            id:12,
         },
         {
             imagen:"../productos/GlockBulletQueen.png",
@@ -122,6 +129,7 @@ const Database =
             stock: "si",
             precio: "$"+3500,
             categoria:"pistola",
+            id:13,
         },
         {
             imagen:"../productos/M4A1PrintStream.png",
@@ -131,6 +139,7 @@ const Database =
             stock: "no",
             precio: "$"+45000,
             categoria:"rifle",
+            id:14,
         },
         {
             imagen:"../productos/GlockVogue.png",
@@ -140,6 +149,7 @@ const Database =
             stock: "no",
             precio: "$"+8700,
             categoria:"pistola",
+            id:15,
         },
         {
             imagen:"../productos/GutKnife.png",
@@ -149,6 +159,7 @@ const Database =
             stock: "no",
             precio: "$"+110000,
             categoria:"cuchillo",
+            id:16,
         },
         {
             imagen:"../productos/Mariposa.png",
@@ -158,6 +169,7 @@ const Database =
             stock: "no",
             precio: "$"+570000,
             categoria:"cuchillo",
+            id:17,
         },
         {
             imagen:"../productos/MotoGlovesTurtle.png",
@@ -167,6 +179,7 @@ const Database =
             stock: "si",
             precio: "$"+50000,
             categoria:"guantes",
+            id:18,
         },
         {
             imagen:"../productos/M4A1BlueFosfore.png",
@@ -176,6 +189,7 @@ const Database =
             stock: "no",
             precio: "$"+170000,
             categoria:"rifle",
+            id:19,
         },
         {
             imagen:"../productos/Navaja.png",
@@ -185,6 +199,7 @@ const Database =
             stock: "no",
             precio: "$"+90000,
             categoria:"cuchillo",
+            id:20,
         },
         {
             imagen:"../productos/M4A4Emperador.png",
@@ -194,6 +209,7 @@ const Database =
             stock: "si",
             precio: "$"+13000,
             categoria:"rifle",
+            id:21,
         },
         {
             imagen:"../productos/M4A4LivingColor.png",
@@ -203,6 +219,7 @@ const Database =
             stock: "si",
             precio: "$"+6000,
             categoria:"rifle",
+            id:22,
         },
         {
             imagen:"../productos/PandoraGloves.png",
@@ -212,6 +229,7 @@ const Database =
             stock: "no",
             precio: "$"+300000,
             categoria:"guantes",
+            id:23,
         },
     ]
 

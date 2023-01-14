@@ -31,7 +31,7 @@ const ItemListContainer = () => {
             <Filtro/>
             </div>
             <div className="cards">
-            {loading ? <h1>Cargando...</h1> : products.map((product) => <ItemList/>,)}
+            {loading ? <h1>Cargando...</h1> : <ItemList/>}
             </div>
         </section>
     </>
