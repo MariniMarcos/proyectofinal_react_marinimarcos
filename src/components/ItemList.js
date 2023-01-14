@@ -9,7 +9,7 @@ const ItemList = () => {
     filteredDatabase.forEach(element => {  
         
         const temp = (<Item imagen={element.imagen} titulo={element.producto} float={element.float} stock={element.stock} stattrack={element.stattrack} precio={element.precio} 
-        />)
+        id={element.id}/>)
         
         ProducDiv.push(temp)
     });
