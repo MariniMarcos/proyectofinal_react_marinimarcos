@@ -24,12 +24,13 @@ const Filtro = () => {
   const handleFilter = (e) => {
     const value = e.target.value;
     if (value === 'todos') {
-      filteredDatabase(Database);
+      filteredDatabase = Database;
     } else {
       const filtered = Database.filter((product) => product.categoria === value);
-      filteredDatabase(filtered);
+      filteredDatabase = filtered;
     }
 
+    console.log(handleFilter)
   };
 
   return (
