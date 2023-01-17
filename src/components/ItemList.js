@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from './Item'
-import filteredDatabase from './Functions';
+import {filteredDatabase} from './Functions';
 
 
 const ItemList = () => {
