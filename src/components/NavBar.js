@@ -15,15 +15,13 @@ function NavBar(props) {
             <Navbar.Brand id='logo' href="#home">SkinPro</Navbar.Brand></Nav.Link>
             <Nav className="me-auto">
               <Nav.Link href="#nosotros">INICIO</Nav.Link>
-              <Nav.Link>
-                <Link to="/category/cuchillos">Cuchillos</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to="/category/guantes">Guantes</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to="/category/pistolas">Pistolas</Link>
-              </Nav.Link>
+              
+              <Nav.Link> <Link to="/productos/cuchillo" className='nav-link'>CUCHILLOS</Link> </Nav.Link>
+              
+              <Nav.Link> <Link to="/productos/guantes" className='nav-link'>GUANTES</Link> </Nav.Link>
+
+              <Nav.Link> <Link to="/productos/pistola" className='nav-link'>PISTOLAS</Link> </Nav.Link>
+              
               {/* <Nav.Link href="#skins">COMPRAR SKINS</Nav.Link>
               <Nav.Link href="#PreguntasFrecuentes">PREGUNTAS FRECUENTES</Nav.Link>
               <Nav.Link href="#contacto">CONTACTO</Nav.Link> */}
