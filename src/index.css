@@ -160,16 +160,18 @@ main{
 }
 
 .btn-primary{
-  color: rgb(0, 0, 0);
-  background-color: #61dafb;
-  border-color: #61dafb;
-  --bs-btn-active-color: rgb(0, 0, 0);
-  --bs-btn-active-bg: #61dafb;
-}
-.btn-primary:hover{
   color: #61dafb;
   background-color: #000000;
   border-color: #61dafb;
+  --bs-btn-active-color: rgb(0, 0, 0);
+  --bs-btn-active-bg: #61dafb;
+  margin: 0.3rem;
+  font-weight: 600;
+}
+.btn-primary:hover{
+  color: black;
+  background-color: #61dafb;
+  border-color: black;
 }
 .material-icons{
   color: #61dafb;
@@ -288,4 +290,94 @@ main{
   position: fixed;
   padding-left: 2.5rem;
   font-weight: 700;
+}
+.itemListConteiner{
+  background-image: linear-gradient(to bottom, #000000 0%, #09203f 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: auto;
+}
+.detail{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: auto;
+  justify-content: space-evenly;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+}
+.detail img {
+  max-width: 50vw;
+  max-height: 50vh;
+  margin: 1rem;
+
+  
+}
+.detail ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  text-align: center;
+  color: #61dafb;
+}
+.itemDetail{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: auto;
+}
+.itemDetailContainer{
+  background-image: linear-gradient(to left, #000000 0%, #09203f 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: auto;
+}
+.itemDetailContainer h1{
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+}
+.itemCount{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.itemCount button {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-color: #61dafb;
+  background-color: rgb(0, 0, 0, 0.3);
+  color: #61dafb;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.itemCount p {
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border-color: #61dafb;
+    background-color: rgb(0, 0, 0, 0.3);
+    color: #61dafb;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+.itemCount button:hover{
+  background-color: #61dafb;
+  color: #000000;
 }

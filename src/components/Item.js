@@ -16,10 +16,10 @@ function Item(props) {
                 <li>Stock: {props.stock}</li>
                 <li>StatTrack: {props.stattrack}</li>
                 <li>Precio:  {props.precio} Arg</li>
-                <Link to={"/item/"+ props.id}>Ver mas</Link>
               </ul>
             </Card.Text>
-          <Button variant="primary">Añadir al carro</Button>
+            <Button className='btn-primary'><Link to={"/item/"+props.id}>Ver mas</Link></Button>
+            <Button className='btn-primary'>Añadir al carrito</Button>
         </Card.Body>
       </Card>
   );

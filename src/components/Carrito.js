@@ -1,26 +1,52 @@
-//import { handleClick } from "./utils"
+import { useState } from "react"
+import UsuariosList from "./UsuariosList"
+
+/* 
+useMemo (hook) : sirve para memorizar una variable (no funcion)
+useCallback (hook) : sirve para memorizar una variable que sean funciones
+memo (HoC) : 
+*/
 
 const Carrito = () => {
-
-    //const btn = document.querySelector('button')
-    //btn.addEventListener('click',?)
-    //e.target = es el elemento original que dispara el evento 
+    
+    const [nombre,setNombre] = useState("")
+    const [email,setEmail] = useState("")
+    const [usuarios,setUsuarios] = useState([])
 
     const handleClick = (e) => {
-        //const btn = document.querySelector('button')
-        console.log(e.target)
+        let copia = [...usuarios]
+        const usuario = {
+            nombre: nombre,
+            email: email
+        }
+        copia.push(usuario)
+        setUsuarios(copia)
     }
-
-    const handleChange = (e) => {
-        //const input = document.querySelector('input')
-        console.log(e.target)
+    
+    
+    const handleChangeName = (e) => {
+        setNombre(e.target.value)
     }
+    
+    
+    const handleChangeEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    
+    
+    console.log("Render")
 
+    
     return (
         <div>
-            <input type="text" onChange={handleChange} />
+            <div>
+                <input type="text" onChange={handleChangeName} placeholder="Nombre"/>
+            </div>
+            <div>
+                <input type="text" onChange={handleChangeEmail} placeholder="Email"/>
+            </div>
             <button onClick={handleClick}>terminar compra</button>
-            {/* <button onClick={(e)=>{}}>terminar compra</button> */}
+            <UsuariosList usuarios={usuarios}/>
         </div>
     )
 }
