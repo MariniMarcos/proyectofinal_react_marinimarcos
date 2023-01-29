@@ -2,7 +2,9 @@ import React from 'react'
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
 import { useEffect, useState} from "react"
-import {setFilteredDataBase2,filteredDatabase,ResetFilteredDataBase} from './Functions';
+import {setFilteredDataBase2,setFilteredDataBase,filteredDatabase,ResetFilteredDataBase} from './Functions';
+import { db } from '../firebase'
+import { collection } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -18,18 +20,13 @@ const ItemDetailContainer = () => {
 
         const getProducts = new Promise((resolve, reject) => {
             setTimeout(() => {
-                if (1){
-                    setFilteredDataBase2(1)
-                }
-                else{
-                    ResetFilteredDataBase()
-                }
-                resolve(filteredDatabase)
+                resolve (setFilteredDataBase2(4))
             }, 2000)
         })
-        getProducts.then((result) => {
-            setProducts(result)
-            setLoading(false)
+        getProducts
+        .then((result) => {
+        setProducts(result)
+        setLoading(false)
         })
 
     }, [id])

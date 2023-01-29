@@ -2,6 +2,9 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import { filteredDatabase } from './Functions'
 import Detail from './Detail'
+import { db } from '../firebase'
+import { collection } from 'firebase/firestore'
+
 
 const ItemDetail = () => {
   

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
 import {setFilteredDataBase,filteredDatabase,ResetFilteredDataBase} from './Functions';
+import { db } from '../firebase';
+import {collection} from "firebase/firestore"
 
 
 
@@ -43,7 +45,7 @@ const ItemListContainer = () => {
                     <h2>SKINS DISPONIBLES</h2>
                 </div>
                 <div className="cards">
-                    {loading ? <h1>Cargando Productos...</h1> : <ItemList products={products} />}
+                    {loading ? <h1>Cargando Productos...</h1> : <ItemList/>}
                 </div>
             </section>
         </>

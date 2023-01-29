@@ -1,6 +1,8 @@
 import React from 'react'
 import Item from './Item'
 import {filteredDatabase} from './Functions';
+import { db } from '../firebase'
+import { collection } from 'firebase/firestore'
 
 
 const ItemList = () => {
