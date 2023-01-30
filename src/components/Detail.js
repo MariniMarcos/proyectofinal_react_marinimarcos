@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
-const Detail = (props) => {
+const Detail = (props, {stock=5}) => {
   return (
     <div className='detail'>
         <img src={props.imagen} alt="" />
@@ -12,7 +12,7 @@ const Detail = (props) => {
             <li>Precio: $ {props.precio} Arg</li>
             <li>id: {props.id} </li>
         </ul>
-        <ItemCount/>
+        <ItemCount stock={stock}/>
     </div>
   )
 }

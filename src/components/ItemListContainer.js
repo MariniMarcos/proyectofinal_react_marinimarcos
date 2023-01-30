@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import {setFilteredDataBase,filteredDatabase,ResetFilteredDataBase} from './Functions';
 import { db } from '../firebase';
 import {collection} from "firebase/firestore"
+import Filtro from './Filtro';
 
 
 
@@ -43,6 +44,7 @@ const ItemListContainer = () => {
             <section className="productos" id="skins">
                 <div className="productos-header">
                     <h2>SKINS DISPONIBLES</h2>
+                    <Filtro/>
                 </div>
                 <div className="cards">
                     {loading ? <h1>Cargando Productos...</h1> : <ItemList/>}

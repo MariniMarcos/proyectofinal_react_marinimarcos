@@ -1,9 +1,10 @@
-import React from 'react'
-import { useState } from "react"
+import React from 'react';
+import { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
   
-    const [contador, setContador] = useState(1)
+    const [contador, setContador] = useState(0)
 
     const handleSumar = () => {
         if (contador < stock ){
@@ -28,13 +29,13 @@ const ItemCount = ({stock, onAdd}) => {
 
     return (
         <div className='itemCount'>
-            <button onClick={handleResetear}>Reset</button>
+            <Button onClick={handleResetear}>Reset</Button>
             <br />
-            <button onClick={handleSumar}>+</button>
+            <Button disabled={contador === stock} onClick={handleSumar}>+</Button>
             <p>{contador}</p>
-            <button onClick={handleRestar }>-</button>
+            <Button disabled={contador === 0} onClick={handleRestar}>-</Button>
             <br />
-            <button onClick={handleConfirmar}>Confirmar</button>
+            <Button disabled={contador === 0 || stock === 1} onClick={handleConfirmar}>Confirmar</Button>
         </div>
     )
 }

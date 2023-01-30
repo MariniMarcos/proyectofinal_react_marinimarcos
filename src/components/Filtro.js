@@ -1,52 +1,26 @@
-// import React, { useState } from 'react';
-// import { useEffect } from "react";
-// import Database from './DataBase';
-// import filteredDatabase from './Functions';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import { NavLink } from 'react-bootstrap';
 
 
-// const Filtro = () => {
-//   const [products, setProducts] = useState([]);
-//   const [loading, setLoading] = useState(true);
+function Filtro() {
+  return (
+    <>
+        <DropdownButton id="dropdown-basic-button" title="Filtrar Skins" menuVariant="dark">
+        <Dropdown.Item><Link className='nav-link' to="/">TODOS</Link></Dropdown.Item>
+        <Dropdown.Item><Link className='nav-link' to="/productos/guantes">GUANTES</Link></Dropdown.Item>
+        <Dropdown.Item><Link className='nav-link' to="/productos/cuchillo">CUCHILLOS</Link></Dropdown.Item>
+        <Dropdown.Item><Link className='nav-link' to="/productos/pistola">PISTOLAS</Link></Dropdown.Item>
+        <Dropdown.Item><Link className='nav-link' to="/productos/subfusil">SUBFUSILES</Link></Dropdown.Item>
+        <Dropdown.Item><Link className='nav-link' to="/productos/sniper">SNIPER</Link></Dropdown.Item>
+        </DropdownButton>
+    </>
+   );
 
-//   useEffect(() => {
-//     const getProducts = new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve(Database);
-//       }, 1000);
-//     });
-//     getProducts.then((result) => {
-//       setProducts(result);
-//       setLoading(false);
-//     });
-//   }, []);
+}
+export default Filtro;
 
 
-//   const handleFilter = (e) => {
-//     const value = e.target.value;
-//     if (value === 'todos') {
-//       filteredDatabase = Database;
-//     } else {
-//       const filtered = Database.filter((product) => product.categoria === value);
-//       filteredDatabase = filtered;
-//     }
 
-//     console.log(handleFilter)
-//   };
-
-//   return (
-//     <>
-//       <select onChange={handleFilter} name="select" id="select" className="filtro">
-//         <option value="todos">Todos</option>
-//         <option value="Cuchillos">Cuchillos</option>
-//         <option value="Guantes">Guantes</option>
-//         <option value="Rifles">Rifles</option>
-//         <option value="Sniper">Sniper</option>
-//         <option value="Subfusiles">Subfusiles</option>
-//         <option value="Escopetas">Escopetas</option>
-//         <option value="Personajes">Personajes</option>
-//       </select>
-//     </>
-//   );
-// };
-
-// export default Filtro;
