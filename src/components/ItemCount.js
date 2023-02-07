@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 
 
-const ItemCount = ({ stock, onAdd }) => {
+const ItemCount = ({ stock, onAdd     }) => {
     const [contador, setContador] = useState(0)
     const handleSumar = () => {
         if (contador < stock) {
@@ -17,7 +17,7 @@ const ItemCount = ({ stock, onAdd }) => {
         onAdd(contador)
     }
     const handleResetear = () => {
-        setContador(1)
+        setContador(0)
     }
     return (
         <div className='itemCount'>
@@ -27,7 +27,7 @@ const ItemCount = ({ stock, onAdd }) => {
             <p>{contador}</p>
             <Button disabled={contador === 0} onClick={handleRestar}>-</Button>
             <br />
-            {<Button disabled={contador === 0 || stock === 1} onClick={handleConfirmar}>Confirmar</Button>}
+            {<Button disabled={contador < 1 || stock < 1} onClick={handleConfirmar}>Confirmar</Button>}
         </div>
     )
 }

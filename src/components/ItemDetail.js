@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCarrito } from './CustomProvider'
 import ItemCount from './ItemCount'
 import Button from 'react-bootstrap/Button'
+import { toast } from 'react-toastify'
 
 
 
@@ -19,6 +20,16 @@ const ItemDetail = ({ producto }) => {
 
   const handleClick = () => {
     agregarProducto(producto, cantidad)
+    toast.success(`Agregaste ${cantidad} ${producto.producto} al carrito`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: 0,
+      theme: "colored",
+  });
   }
   
 

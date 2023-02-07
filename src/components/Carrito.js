@@ -1,5 +1,4 @@
 import { useState } from "react"
-import UsuariosList from "./UsuariosList"
 import { db } from '../firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import Button from 'react-bootstrap/Button';
@@ -10,7 +9,6 @@ import { useCarrito } from "./CustomProvider";
 const Carrito = () => {
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
-    const [usuarios, setUsuarios] = useState([])
     const { carrito } = useCarrito()
     const handleClick = (e) => {
         const orden = {
@@ -32,17 +30,17 @@ const Carrito = () => {
             .catch(error => {
                 console.log(error)
             })
-        toast.success('COMPRASTE CON EXITO!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-            theme: "colored",
-        });
-    }
+            toast.success(`Compraste con exito`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: 0,
+                theme: "colored",
+            });
+        }
     const handleChangeName = (e) => {
         setNombre(e.target.value)
     }
@@ -52,18 +50,29 @@ const Carrito = () => {
     return (
         <div className="carrito">
             <h1>Estas a un paso de finalizar tu compra</h1>
+
             {
-                carrito.map((producto,cantidad) => {
-                    return (
-                        <div className="producto">
-                            <img src={producto.imagen} alt="" />
-                            <h3>{producto.nombre}</h3>
-                            <p>Estado del Item: {producto.float}</p>
-                            <p>Lleva stattrack: {producto.stattrack}</p>
-                            <p>Precio:  ${producto.precio}Ars</p>
-                            <p>Cantidad: {cantidad}</p>
-                        </div>
-                    )
+                carrito.map((producto, cantidad) => {
+                    if (carrito.length === 0) {
+                        return (
+                          <div className="cart">
+                            <h1 className="cartTittle">No hay productos en el carrito</h1>
+                          </div>
+                        );
+                      }
+                    else{
+                        return (
+                            <div className="producto">
+                                <img src={producto.imagen} alt="" />
+                                <h3>{producto.producto}</h3>
+                                <p>Estado del Item: {producto.float}</p>
+                                <p>Lleva stattrack: {producto.stattrack}</p>
+                                <p>Precio:  ${producto.precio} Ars</p>
+                                <p>Cantidad: {cantidad}</p>
+                            </div>
+    
+                        )
+                    }  
                 }
                 )
             }
@@ -84,10 +93,9 @@ const Carrito = () => {
                     Finalizar compra
                 </Button>
                 <Form.Text>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
-                        Illum inventore maiores odit autem magni aspernatur blanditiis, molestiae debitis temporibus. Nemo harum, necessitatibus totam numquam eos exercitationem, repellendus dignissimos distinctio soluta molestias, quas assumenda nihil architecto est vitae voluptates.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
+                    Illum inventore maiores odit autem magni aspernatur blanditiis, molestiae debitis temporibus. Nemo harum, necessitatibus totam numquam eos exercitationem, repellendus dignissimos distinctio soluta molestias, quas assumenda nihil architecto est vitae voluptates.
                 </Form.Text>
-                <UsuariosList usuarios={usuarios} />
             </Form>
         </div>
     )
