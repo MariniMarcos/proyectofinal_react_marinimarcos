@@ -1,26 +1,17 @@
 import React from 'react'
 import Item from './Item'
-import {filteredDatabase} from './Functions';
-import { db } from '../firebase'
-import { collection } from 'firebase/firestore'
 
-
-const ItemList = () => {
-  
-    const ProducDiv = []
-    filteredDatabase.forEach(element => {  
-        
-        const temp = (<Item imagen={element.imagen} titulo={element.producto} float={element.float} stock={element.stock} stattrack={element.stattrack} precio={element.precio} 
-        id={element.id}/>)
-        
-        ProducDiv.push(temp)
-    });
-
+const ItemList = ({ productos }) => {
     return (
-            <div className="cards">
-            {ProducDiv}
-            </div>
-  )
+        <section className='cards'>
+            {productos.map((producto) => {
+                return (
+                    <div>
+                        <Item producto={producto} key={producto.id} />
+                    </div>
+                )
+            })}
+        </section>
+    )
 }
-
 export default ItemList

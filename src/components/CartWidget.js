@@ -2,12 +2,10 @@ import React from 'react'
 
 const CartWidget = () => {
   return (
-    <>
-      <a>
+    <a>
       <span className='numeroCarrito'>1</span>
-      <span className='material-icons'>shopping_cart</span>  
-      </a>
-    </>
+      <span className='material-icons'>shopping_cart</span>
+    </a>
   )
 }
 

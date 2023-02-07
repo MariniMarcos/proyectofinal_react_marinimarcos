@@ -3,21 +3,20 @@ import Form from 'react-bootstrap/Form';
 
 const Contacto = () => {
   return (
-    <>
-      <section className='contacto' id='contacto'>
+    <section className='contacto' id='contacto'>
       <h2>CONTACTO</h2>
       <div className='contactoContainer'>
-          <Form className='contactoFormulario'>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Direccion de email</Form.Label>
-              <Form.Control type="email" placeholder="nombre@ejemplo.com" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Dejenos conocer su opinion</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-            <button className='contactoBoton'>Enviar</button> 
-          </Form>
+        <Form className='contactoFormulario'>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Direccion de email</Form.Label>
+            <Form.Control type="email" placeholder="nombre@ejemplo.com" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Dejenos conocer su opinion</Form.Label>
+            <Form.Control as="textarea" rows={3} />
+          </Form.Group>
+          <button className='contactoBoton'>Enviar</button>
+        </Form>
         <div className='contactoTexto'>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic quas eveniet atque delectus, adipisci debitis et fugiat, eos accusamus voluptate molestiae beatae vel impedit earum id ullam, nulla quo blanditiis?
@@ -26,8 +25,7 @@ const Contacto = () => {
           </p>
         </div>
       </div>
-      </section>
-    </>
+    </section>
   )
 }
 

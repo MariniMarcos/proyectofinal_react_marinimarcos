@@ -1,31 +1,40 @@
-import React from 'react'
+import { useState } from 'react'
+import { useCarrito } from './CustomProvider'
 import ItemCount from './ItemCount'
-import { filteredDatabase } from './Functions'
-import Detail from './Detail'
-import { db } from '../firebase'
-import { collection } from 'firebase/firestore'
+import Button from 'react-bootstrap/Button'
 
 
-const ItemDetail = () => {
+
+const ItemDetail = ({ producto }) => {
   
-    // const onAdd = (parametro) => {
-    //     console.log(parametro)
-    // }
-    
-    const ProducDiv = []
-    filteredDatabase.forEach(element => {  
-        
-        const temp = (<Detail imagen={element.imagen} titulo={element.producto} float={element.float} stock={element.stock} stattrack={element.stattrack} precio={element.precio} 
-        id={element.id}/>)
-        
-        ProducDiv.push(temp)
-    });
+  const [confirmado, setConfirmado] = useState(false)
+  const [cantidad, setCantidad] = useState(0)
+  const {agregarProducto} = useCarrito()
 
+  const onAdd = (parametro) => {
+    console.log(parametro)
+    setCantidad(parametro)
+    setConfirmado(true)
+  }
+
+  const handleClick = () => {
+    agregarProducto(producto, cantidad)
+  }
   
+
+ 
     return (
-    <>
-            {ProducDiv}
-    </>
+      <div className='detail'>
+      <img src={producto.imagen} alt="" />
+      <ul>
+          <li>Float: {producto.float}</li>
+          <li>Stock: {producto.stock}</li>
+          <li>StatTrack: {producto.stattrack}</li>
+          <li>Precio: $ {producto.precio} Arg</li>
+      </ul>
+      <ItemCount stock={producto.stock} onAdd={onAdd} />
+      {confirmado && <Button onClick={handleClick}>Añadir al carrito</Button>}
+  </div>
   )
 }
 

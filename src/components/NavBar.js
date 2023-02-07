@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import CartWidget from './CartWidget';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 
 function NavBar(props) {
 
@@ -18,14 +18,6 @@ function NavBar(props) {
             <Nav className="me-auto">
               <Nav.Link href="#nosotros">NOSOTROS</Nav.Link>
               <Nav.Link href="#skins">SKINS</Nav.Link>
-              {/* <NavDropdown id="nav-dropdown-dark-example" title="FILTRAR" menuVariant="dark">
-                <NavDropdown.Item href='#skins'><Link to="/" className='nav-link'>TODOS</Link></NavDropdown.Item>
-                <NavDropdown.Item> <Link to="/productos/guantes" className='nav-link'>GUANTES</Link> </NavDropdown.Item>
-                <NavDropdown.Item> <Link to="/productos/cuchillo" className='nav-link'>CUCHILLOS</Link> </NavDropdown.Item>
-                <NavDropdown.Item> <Link to="/productos/pistola" className='nav-link'>PISTOLAS</Link>  </NavDropdown.Item>
-                <NavDropdown.Item> <Link to="/productos/subfusil" className='nav-link'>SUBFUSILES</Link> </NavDropdown.Item>
-                <NavDropdown.Item> <Link to="/productos/sniper" className='nav-link'>SNIPER</Link> </NavDropdown.Item>
-              </NavDropdown> */}
               <Nav.Link href="#PreguntasFrecuentes">PREGUNTAS FRECUENTES</Nav.Link>
               <Nav.Link href="#contacto">CONTACTO</Nav.Link>
               <NavLink>
@@ -63,8 +55,5 @@ function NavBar(props) {
       </>
     )
   }
-
-
 }
-
 export default NavBar;

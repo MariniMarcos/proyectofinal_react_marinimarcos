@@ -2,31 +2,23 @@ import React from 'react';
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({stock, initial, onAdd}) => {
-  
-    const [contador, setContador] = useState(0)
 
+const ItemCount = ({ stock, onAdd }) => {
+    const [contador, setContador] = useState(0)
     const handleSumar = () => {
-        if (contador < stock ){
+        if (contador < stock) {
             setContador(contador + 1)
         }
     }
-
-    const handleRestar = () =>{
+    const handleRestar = () => {
         setContador(contador - 1)
     }
-
-    const handleConfirmar =() =>{
+    const handleConfirmar = () => {
         onAdd(contador)
     }
-
-    const handleResetear = () =>{
+    const handleResetear = () => {
         setContador(1)
     }
-
- 
-
-
     return (
         <div className='itemCount'>
             <Button onClick={handleResetear}>Reset</Button>
@@ -35,9 +27,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <p>{contador}</p>
             <Button disabled={contador === 0} onClick={handleRestar}>-</Button>
             <br />
-            <Button disabled={contador === 0 || stock === 1} onClick={handleConfirmar}>Confirmar</Button>
+            {<Button disabled={contador === 0 || stock === 1} onClick={handleConfirmar}>Confirmar</Button>}
         </div>
     )
 }
-
 export default ItemCount

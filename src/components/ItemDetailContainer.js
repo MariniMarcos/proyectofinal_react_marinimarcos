@@ -1,43 +1,39 @@
 import React from 'react'
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
-import { useEffect, useState} from "react"
-import {setFilteredDataBase2,setFilteredDataBase,filteredDatabase,ResetFilteredDataBase} from './Functions';
+import { useEffect, useState } from "react"
 import { db } from '../firebase'
-import { collection } from 'firebase/firestore'
+import { collection, getDoc, doc } from 'firebase/firestore'
+import { toast } from 'react-toastify'
 
 
 const ItemDetailContainer = () => {
-    
-    const [loading, setLoading] = useState(true)
-    const [products, setProducts] = useState([])
-
+    const [producto, setProducto] = useState({})
     const { id } = useParams()
-
-    
-
     useEffect(() => {
-
-        const getProducts = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve (setFilteredDataBase2(4))
-            }, 2000)
-        })
-        getProducts
-        .then((result) => {
-        setProducts(result)
-        setLoading(false)
-        })
-
+        toast.info("Cargando producto...")
+        const productosCollection = collection(db, "productos")
+        const referencia = doc(productosCollection, id)
+        const pedido = getDoc(referencia)
+        pedido
+            .then((respuesta) => {
+                //console.log(respuesta.id)
+                const producto = respuesta.data()
+                setProducto(producto)
+                toast.dismiss()
+                toast.success("Producto cargado!")
+            })
+            .catch((error) => {
+                console.log(error)
+                toast.dismiss()
+                toast.error("Hubo un error, vuelva a intentarlo!")
+            })
     }, [id])
-
     return (
         <div className='itemDetailContainer'>
-        {loading ? <h1>Cargando Detalle ... </h1> : 
-        <ItemDetail/> 
-        }
+            <ItemDetail producto={producto} />
         </div>
-    )    
+    )
 
 }
 
