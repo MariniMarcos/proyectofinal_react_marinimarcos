@@ -10,6 +10,7 @@ const Carrito = () => {
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
     const { carrito } = useCarrito()
+    const { totalProducto } = useCarrito();
     const handleClick = (e) => {
         const orden = {
             usuario: {
@@ -30,7 +31,7 @@ const Carrito = () => {
             .catch(error => {
                 console.log(error)
             })
-            toast.success(`Compraste con exito`, {
+            toast.success(`Compraste ${totalProducto()} Skins con exito`, {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: true,
@@ -47,20 +48,17 @@ const Carrito = () => {
     const handleChangeEmail = (e) => {
         setEmail(e.target.value)
     }
+    if(carrito ? carrito.length === 0 : true) 
     return (
         <div className="carrito">
-            <h1>Estas a un paso de finalizar tu compra</h1>
-
+            <h1>📢 No hay productos en el carrito 🛒❌</h1>
+        </div>
+    ) 
+    return (
+        <div className="carrito">
+            <h1>📢 Estas a un paso de finalizar tu compra🛒💲✔</h1>
             {
-                carrito.map((producto, cantidad) => {
-                    if (carrito.length === 0) {
-                        return (
-                          <div className="cart">
-                            <h1 className="cartTittle">No hay productos en el carrito</h1>
-                          </div>
-                        );
-                      }
-                    else{
+                carrito.map((producto) => {
                         return (
                             <div className="producto">
                                 <img src={producto.imagen} alt="" />
@@ -68,15 +66,17 @@ const Carrito = () => {
                                 <p>Estado del Item: {producto.float}</p>
                                 <p>Lleva stattrack: {producto.stattrack}</p>
                                 <p>Precio:  ${producto.precio} Ars</p>
-                                <p>Cantidad: {cantidad}</p>
+                                <p>Cantidad: {totalProducto()}</p>
                             </div>
     
                         )
                     }  
-                }
                 )
             }
             <Form className="Payform">
+            <Form.Text>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
+                </Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label onChange={handleChangeEmail} >Direccion de correo</Form.Label>
                     <Form.Control type="email" placeholder="Correo electronico" />
@@ -92,10 +92,6 @@ const Carrito = () => {
                 <Button variant="primary" onClick={handleClick}>
                     Finalizar compra
                 </Button>
-                <Form.Text>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
-                    Illum inventore maiores odit autem magni aspernatur blanditiis, molestiae debitis temporibus. Nemo harum, necessitatibus totam numquam eos exercitationem, repellendus dignissimos distinctio soluta molestias, quas assumenda nihil architecto est vitae voluptates.
-                </Form.Text>
             </Form>
         </div>
     )

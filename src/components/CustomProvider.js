@@ -12,7 +12,16 @@ const CustomProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([])
     
     const agregarProducto = (producto, cantidad) => {
-        setCarrito([...carrito, producto])
+        if(estaEnCarrito(producto.id)){
+            setCarrito(
+                carrito.map((el) => {
+                    return el.id === producto.id ? 
+                    {...el, cantidad: el.cantidad + cantidad} : el
+                })
+            )
+        }else{
+            setCarrito([...carrito, {...producto, cantidad: cantidad}])   
+        }
     }
     
     const eliminarProducto = (id) => { 
