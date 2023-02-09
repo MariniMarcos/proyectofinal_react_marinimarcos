@@ -54,24 +54,6 @@ const Carrito = () => {
         setTelefono(event.target.value);
     }
 
-    const handleCheck = () => {
-        if (nombre == "" && email == "" && telefono == "") {
-            toast.error(`Es necesario completar todos los campos para finalizar la compra!`, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: 0,
-                theme: "colored",
-            });
-        } else {
-            handleClick()
-        }
-
-    }
-
     if (carrito ? carrito.length === 0 : true)
         return (
             <div className="carrito">
@@ -116,7 +98,7 @@ const Carrito = () => {
                     <Form.Label>Numero de telefono</Form.Label>
                     <Form.Control type="tel" value={telefono} onChange={handleTelefonoChange} placeholder="Numero de telefono" />
                 </Form.Group>
-                <Button disabled={!nombre || !email || !telefono}>Finalizar Compra</Button>
+                <Button disabled={!nombre || !email || !telefono} onClick={handleClick} >Finalizar Compra</Button>
             </Form>
         </div>
     )
