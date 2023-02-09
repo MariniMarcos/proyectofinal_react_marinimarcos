@@ -24,10 +24,10 @@ const CustomProvider = ({ children }) => {
         }
     }
     
-    const eliminarProducto = (id) => { 
-        const nuevoCarrito = carrito.filter((producto) => producto.id !== id)
-        setCarrito(nuevoCarrito)
+    const eliminarProducto = (id) => {
+        setCarrito(carrito.filter((el) => el.id !== id))
     }
+
     
     const vaciarCarrito = () => {
         setCarrito([])

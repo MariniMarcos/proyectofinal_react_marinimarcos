@@ -38,6 +38,7 @@ const ItemDetail = ({ producto }) => {
       <div className='detail'>
       <img src={producto.imagen} alt="" />
       <ul>
+          <li>Nombre: {producto.producto}</li>
           <li>Float: {producto.float}</li>
           <li>Stock: {producto.stock}</li>
           <li>StatTrack: {producto.stattrack}</li>

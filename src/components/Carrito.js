@@ -7,17 +7,17 @@ import { toast } from 'react-toastify';
 import { useCarrito } from "./CustomProvider";
 
 const Carrito = () => {
-    const [nombre, setNombre] = useState("")
-    const [email, setEmail] = useState("")
-    const { carrito } = useCarrito()
-    const { totalProducto } = useCarrito();
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [telefono, setTelefono] = useState("");
+    const { carrito, totalProducto, vaciarCarrito, eliminarProducto } = useCarrito()
+
     const handleClick = (e) => {
         const orden = {
             usuario: {
-                nombre: "Marcos Marini",
-                email: "marcosmarini@test.com",
-                telefono: "1234-4321",
-                Direccion: "Calle falsa 1234"
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
             },
             productos: [],
             fecha: serverTimestamp()
@@ -31,7 +31,32 @@ const Carrito = () => {
             .catch(error => {
                 console.log(error)
             })
-            toast.success(`Compraste ${totalProducto()} Skins con exito`, {
+        toast.success(`Compraste ${totalProducto()} Skins con exito`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "colored",
+        });
+    }
+    function handleNombreChange(event) {
+        setNombre(event.target.value);
+    }
+
+    function handleEmailChange(event) {
+        setEmail(event.target.value);
+    }
+
+    function handleTelefonoChange(event) {
+        setTelefono(event.target.value);
+    }
+
+    const handleCheck = () => {
+        if (nombre == "" && email == "" && telefono == "") {
+            toast.error(`Es necesario completar todos los campos para finalizar la compra!`, {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: true,
@@ -41,57 +66,57 @@ const Carrito = () => {
                 progress: 0,
                 theme: "colored",
             });
+        } else {
+            handleClick()
         }
-    const handleChangeName = (e) => {
-        setNombre(e.target.value)
+
     }
-    const handleChangeEmail = (e) => {
-        setEmail(e.target.value)
-    }
-    if(carrito ? carrito.length === 0 : true) 
-    return (
-        <div className="carrito">
-            <h1>📢 No hay productos en el carrito 🛒❌</h1>
-        </div>
-    ) 
+
+    if (carrito ? carrito.length === 0 : true)
+        return (
+            <div className="carrito">
+                <h1>📢 No hay productos en el carrito 🛒❌</h1>
+            </div>
+        )
     return (
         <div className="carrito">
             <h1>📢 Estas a un paso de finalizar tu compra🛒💲✔</h1>
+            <Button variant="danger" onClick={vaciarCarrito} > VACIAR EL CARRITO 🛒</Button>
             {
                 carrito.map((producto) => {
-                        return (
-                            <div className="producto">
-                                <img src={producto.imagen} alt="" />
-                                <h3>{producto.producto}</h3>
-                                <p>Estado del Item: {producto.float}</p>
-                                <p>Lleva stattrack: {producto.stattrack}</p>
-                                <p>Precio:  ${producto.precio} Ars</p>
-                                <p>Cantidad: {totalProducto()}</p>
-                            </div>
-    
-                        )
-                    }  
+                    return (
+                        <div className="producto">
+                            <img src={producto.imagen} alt="" />
+                            <h3>{producto.producto}</h3>
+                            <p>Estado del Item: {producto.float}</p>
+                            <p>Lleva stattrack: {producto.stattrack}</p>
+                            <p>Precio:  ${producto.precio} Ars</p>
+                            <p>Cantidad: {totalProducto()}</p>
+                            <p>Importe Total Producto: ${ } </p>
+                            <Button id="EliminarProducto" variant="danger" onClick={eliminarProducto}> Eliminar producto</Button>
+                        </div>
+                    )
+                }
                 )
             }
+
             <Form className="Payform">
-            <Form.Text>
+                <Form.Text>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
                 </Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label onChange={handleChangeEmail} >Direccion de correo</Form.Label>
-                    <Form.Control type="email" placeholder="Correo electronico" />
+                    <Form.Label>Direccion de correo</Form.Label>
+                    <Form.Control type="email" value={email}  onChange={handleEmailChange} placeholder="Correo electronico" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label onChange={handleChangeName}>Nombre completo</Form.Label>
-                    <Form.Control type="text" placeholder="Nombre completo" />
+                    <Form.Label>Nombre completo</Form.Label>
+                    <Form.Control type="text" value={nombre} onChange={handleNombreChange} placeholder="Nombre completo" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                     <Form.Label>Numero de telefono</Form.Label>
-                    <Form.Control type="number" placeholder="Numero de telefono" />
+                    <Form.Control type="tel" value={telefono} onChange={handleTelefonoChange} placeholder="Numero de telefono" />
                 </Form.Group>
-                <Button variant="primary" onClick={handleClick}>
-                    Finalizar compra
-                </Button>
+                <Button disabled={!nombre || !email || !telefono}>Finalizar Compra</Button>
             </Form>
         </div>
     )

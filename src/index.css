@@ -132,7 +132,7 @@ main{
   max-height: 300px;
 }
 .cardImage:hover{
-  transform: scale(1.7);
+  transform: scale(1.3);
   transition: 0.5s;
 }
 .card ul{
@@ -143,6 +143,8 @@ main{
   text-align: justify;
   padding-bottom: 1rem;
   padding-left: 1rem;
+  color: #61dafb;
+  font-weight: 400;
 }
 .car li{
   padding-top: 1rem;
@@ -160,6 +162,16 @@ main{
 #logo:hover{
   color: #61dafb;
 }
+#EliminarProducto{
+  border-radius: 10px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 17px;
+}
 
 .btn-primary{
   color: #61dafb;
@@ -169,6 +181,7 @@ main{
   --bs-btn-active-bg: #61dafb;
   margin: 0.3rem;
   font-weight: 600;
+  font-size: 17px;
 }
 .btn-primary:hover{
   color: black;
@@ -470,6 +483,10 @@ main{
 }
 .btn-primary a {
   color: #61dafb;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 17px;
+  text-decoration: none;
 }
 .btn-primary a:hover {
   color: #000000;

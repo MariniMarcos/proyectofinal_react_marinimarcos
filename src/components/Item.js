@@ -12,7 +12,8 @@ function Item({ producto }) {
       <Card.Body>
         <Card.Title className='cardTitulo'>{producto.titulo}</Card.Title>
         <Card.Text>
-          <ul>
+          <ul className='' >
+            <li>Nombre: {producto.producto}</li>
             <li>Float: {producto.float}</li>
             <li>Stock: {producto.stock}</li>
             <li>StatTrack: {producto.stattrack}</li>
