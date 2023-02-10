@@ -44,7 +44,7 @@ const ItemDetail = ({ producto }) => {
           <li>Precio: $ {producto.precio} Arg</li>
       </ul>
       <ItemCount stock={producto.stock} onAdd={onAdd} />
-      {confirmado && <Button onClick={handleClick}>Añadir al carrito</Button>}
+      {confirmado && <Button onClick={handleClick} id="Añadiracarrito" >Añadir al carrito 🛒</Button>}
   </div>
   )
 }

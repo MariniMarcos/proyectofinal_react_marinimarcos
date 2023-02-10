@@ -10,7 +10,7 @@ const Carrito = () => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
-    const { carrito, totalProducto, vaciarCarrito, eliminarProducto } = useCarrito()
+    const { carrito, vaciarCarrito, eliminarProducto } = useCarrito()
 
     const handleClick = (e) => {
         const orden = {
@@ -20,7 +20,8 @@ const Carrito = () => {
                 telefono: telefono,
             },
             productos: [],
-            fecha: serverTimestamp()
+            fecha: serverTimestamp(),
+            total: totalAPagar(),
         }
         const ventasCollection = collection(db, "ventas")
         const pedido = addDoc(ventasCollection, orden)
@@ -31,7 +32,7 @@ const Carrito = () => {
             .catch(error => {
                 console.log(error)
             })
-        toast.success(`Compraste ${totalProducto()} Skins con exito`, {
+        toast.success(`COMPRASTE CON EXITO!🤑🚀 `, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: true,
@@ -54,17 +55,24 @@ const Carrito = () => {
         setTelefono(event.target.value);
     }
 
-    function PrecioTotalProducto (producto){
+    function precioTotalProducto (producto){
         let total = 0;
         total += producto.precio * producto.cantidad
-
         return total
     }
-
+    
+    const totalAPagar = () => {
+        let total = 0;
+        carrito.forEach(producto => {
+            total += precioTotalProducto(producto)
+        });
+        return total
+    }
+    
     const deleteItem = (producto) => {
         eliminarProducto(producto);
         toast.dismiss();
-        toast.error(`Borraste ${producto.cantidad} ${producto.producto} con exito `, {
+        toast.error(`Borraste ${producto.cantidad} ${producto.producto} con exito 🚨 `, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: true,
@@ -96,16 +104,20 @@ const Carrito = () => {
                             <p>Lleva stattrack: {producto.stattrack}</p>
                             <p>Precio:  ${producto.precio} Ars</p>
                             <p>Cantidad: {producto.cantidad}</p>
-                            <p>Importe Total Producto: ${PrecioTotalProducto(producto)} </p>
-                            <Button id="EliminarProducto" variant="danger" onClick={() => deleteItem(producto)}> Eliminar Item </Button>
+                            <p>Importe Total Producto: ${precioTotalProducto(producto)} </p>
+                            <Button id="EliminarProducto" variant="danger" onClick={() => deleteItem(producto)}> QUITAR DEL CARRITO 🛒 </Button>
                         </div>
                     )
                 }
                 )
             }
+            <div className="Totalapagar">
+                <h2>Importe total del carrito: ${totalAPagar()} Ars</h2>
+            </div>
             <Form className="Payform">
                 <Form.Text>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
+                    Tengase presente, que es necesario completar sus datos para que se habilite el boton de "Finalizar compra".
+                    No compartiremos esta informacion con nadie, simplemente es para autenticar la compra.
                 </Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Direccion de correo</Form.Label>

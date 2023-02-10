@@ -28,6 +28,7 @@ export const useCarrito = () => {
     const eliminarProducto = (producto) => {
         const newCarrito = carrito.filter((e) => e.nombre !== producto.nombre);
         setCarrito(newCarrito);
+        return newCarrito
       };
 
     
@@ -39,10 +40,10 @@ export const useCarrito = () => {
         carrito.find((x) => x.id === id)
     }
 
-    const totalProducto = () => {
+    const totalProducto = (producto) => {
         let total = 0;
-        carrito.forEach(ProductoEnCarrito => {
-            total = total + ProductoEnCarrito.cantidad
+        carrito.forEach(producto => {
+            total = total + producto.cantidad
         })
         return total;
     }

@@ -278,6 +278,25 @@ main{
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+.Totalapagar{
+  color: #61dafb;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+#Añadiracarrito{
+  color: #61dafb;
+  background-color: #000000;
+  border-color: #61dafb;
+  --bs-btn-active-color: rgb(0, 0, 0);
+  --bs-btn-active-bg: #61dafb;
+  margin: 0.3rem;
+  font-weight: 600;
+  font-size: 17px;
+  margin: 2rem ;
+}
 .Payform{
   border-color: #61dafb;
   border-style: solid;
@@ -451,7 +470,6 @@ main{
   margin-left: 1rem;
   margin-right: 1rem;
   width: 100vw;
-  margin-bottom: 2rem;
 }
 .itemCount button {
   padding: 0.5rem;
