@@ -19,7 +19,7 @@ const ItemDetail = ({ producto }) => {
 
   const handleClick = () => {
     agregarProducto(producto, cantidad)
-    toast.success(`Agregaste ${cantidad} ${producto.producto} al carrito`, {
+    toast.success(`Agregaste ${cantidad} ${producto.producto} al carrito 🛒🚀`, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: true,
@@ -27,7 +27,7 @@ const ItemDetail = ({ producto }) => {
       pauseOnHover: true,
       draggable: true,
       progress: 0,
-      theme: "colored",
+      theme: "dark",
   });
   }
   

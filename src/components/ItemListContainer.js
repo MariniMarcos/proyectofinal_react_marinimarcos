@@ -22,13 +22,31 @@ const ItemListContainer = () => {
             );
         }
         const getProducts = getDocs(filtro)
-        toast.info("Cargando productos...")
+        toast.info(`CARGANDO PRODUCTOS⏰😴`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "dark",
+        });
         getProducts
             .then((respuesta) => {
                 const productos = respuesta.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                 setProducts(productos)
                 toast.dismiss()
-                toast.success("Productos cargados!")
+                toast.success(`PRODUCTOS CARGADOS👇😜`, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                    theme: "dark",
+                });
             })
             .catch((error) => {
                 console.log(error)

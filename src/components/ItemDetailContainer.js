@@ -11,7 +11,16 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const { id } = useParams()
     useEffect(() => {
-        toast.info("Cargando producto...")
+        toast.info(`CARGANDO PRODUCTOS⏰😴`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "dark",
+        });
         const productosCollection = collection(db, "productos")
         const referencia = doc(productosCollection, id)
         const pedido = getDoc(referencia)
@@ -21,7 +30,16 @@ const ItemDetailContainer = () => {
                 const producto = respuesta.data()
                 setProducto(producto)
                 toast.dismiss()
-                toast.success("Producto cargado!")
+                toast.success(`PRODUCTO CARGADO👇😜`, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                    theme: "dark",
+                });
             })
             .catch((error) => {
                 console.log(error)

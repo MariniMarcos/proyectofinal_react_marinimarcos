@@ -11,6 +11,7 @@ const Carrito = () => {
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const { carrito, vaciarCarrito, eliminarProducto } = useCarrito()
+    const [idVenta, setIdVenta] = useState ("")
 
     const handleClick = (e) => {
         const orden = {
@@ -27,12 +28,21 @@ const Carrito = () => {
         const pedido = addDoc(ventasCollection, orden)
         pedido
             .then((resultado) => {
-                console.log(resultado.id)
+                setIdVenta(resultado.id)
             })
             .catch(error => {
-                console.log(error)
+                toast.error(` Error : ${error} 🚨 `, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                    theme: "dark",
+                });
             })
-        toast.success(`COMPRASTE CON EXITO!🤑🚀 `, {
+        toast.success(`El ID DE SU VENTA ES "${idVenta}" `, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: true,
@@ -40,7 +50,7 @@ const Carrito = () => {
             pauseOnHover: true,
             draggable: true,
             progress: 0,
-            theme: "colored",
+            theme: "dark",
         });
     }
     function handleNombreChange(event) {
@@ -93,7 +103,7 @@ const Carrito = () => {
     return (
         <div className="carrito">
             <h1>📢 Estas a un paso de finalizar tu compra🛒💲✔</h1>
-            <Button variant="danger" onClick={vaciarCarrito} > VACIAR EL CARRITO 🛒</Button>
+            <Button variant="danger" onClick={vaciarCarrito } > VACIAR EL CARRITO 🛒</Button>
             {
                 carrito.map((producto) => {
                     return (

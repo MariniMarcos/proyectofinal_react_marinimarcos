@@ -448,6 +448,11 @@ main{
   width: 100vw;
   height: auto;
 }
+.Toastify__toast-theme--dark {
+  background: var(--toastify-color-dark);
+  color: #61dafb;
+  font-weight: 400;
+}
 .itemDetailContainer{
   background-image: linear-gradient(to left, #000000 0%, #09203f 100%);
   background-size: cover;
