@@ -3,6 +3,7 @@ import { useCarrito } from './CustomProvider'
 import ItemCount from './ItemCount'
 import Button from 'react-bootstrap/Button'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom';
 
 
 
@@ -45,6 +46,7 @@ const ItemDetail = ({ producto }) => {
       </ul>
       <ItemCount stock={producto.stock} onAdd={onAdd} />
       {confirmado && <Button onClick={handleClick} id="Añadiracarrito" >Añadir al carrito 🛒</Button>}
+      <Link to="/"><Button id='Backtoproducts' > Volver al Listado Productos 📦🗄 </Button> </Link>
   </div>
   )
 }

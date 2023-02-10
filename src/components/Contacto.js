@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 const Contacto = () => {
   return (
     <section className='contacto' id='contacto'>
-      <h2>CONTACTO</h2>
+      <h2>CONTACTO 📩</h2>
       <div className='contactoContainer'>
         <Form className='contactoFormulario'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

@@ -90,7 +90,7 @@ const Carrito = () => {
             pauseOnHover: true,
             draggable: true,
             progress: 0,
-            theme: "colored",
+            theme: "dark",
         });
     };
 
