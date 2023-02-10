@@ -26,7 +26,7 @@ export const useCarrito = () => {
     }
     
     const eliminarProducto = (producto) => {
-        const newCarrito = carrito.filter((e) => e.nombre !== producto.nombre);
+        const newCarrito = carrito.filter((e) => e.producto !== producto.producto);
         setCarrito(newCarrito);
         return newCarrito
       };
@@ -34,6 +34,7 @@ export const useCarrito = () => {
     
     const vaciarCarrito = () => {
         setCarrito([])
+        totalProducto(0)
     }
     
     const estaEnCarrito = (id) => {
