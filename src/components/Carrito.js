@@ -54,6 +54,28 @@ const Carrito = () => {
         setTelefono(event.target.value);
     }
 
+    function PrecioTotalProducto (producto){
+        let total = 0;
+        total += producto.precio * producto.cantidad
+
+        return total
+    }
+
+    const deleteItem = (producto) => {
+        eliminarProducto(producto);
+        toast.dismiss();
+        toast.error(`Borraste ${producto.cantidad} ${producto.producto} con exito `, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "colored",
+        });
+    };
+
     if (carrito ? carrito.length === 0 : true)
         return (
             <div className="carrito">
@@ -73,22 +95,21 @@ const Carrito = () => {
                             <p>Estado del Item: {producto.float}</p>
                             <p>Lleva stattrack: {producto.stattrack}</p>
                             <p>Precio:  ${producto.precio} Ars</p>
-                            <p>Cantidad: {totalProducto()}</p>
-                            <p>Importe Total Producto: ${ } </p>
-                            <Button id="EliminarProducto" variant="danger" onClick={eliminarProducto}> Eliminar producto</Button>
+                            <p>Cantidad: {producto.cantidad}</p>
+                            <p>Importe Total Producto: ${PrecioTotalProducto(producto)} </p>
+                            <Button id="EliminarProducto" variant="danger" onClick={() => deleteItem(producto)}> Eliminar Item </Button>
                         </div>
                     )
                 }
                 )
             }
-
             <Form className="Payform">
                 <Form.Text>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur soluta officiis adipisci eius, doloremque ducimus atque distinctio nihil placeat, nulla voluptatibus modi error sapiente accusantium sint! Vel sit deleniti culpa.
                 </Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Direccion de correo</Form.Label>
-                    <Form.Control type="email" value={email}  onChange={handleEmailChange} placeholder="Correo electronico" />
+                    <Form.Control type="email" value={email} onChange={handleEmailChange} placeholder="Correo electronico" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Nombre completo</Form.Label>

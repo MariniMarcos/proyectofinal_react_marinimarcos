@@ -13,7 +13,6 @@ const ItemDetail = ({ producto }) => {
   const {agregarProducto} = useCarrito()
 
   const onAdd = (parametro) => {
-    console.log(parametro)
     setCantidad(parametro)
     setConfirmado(true)
   }
